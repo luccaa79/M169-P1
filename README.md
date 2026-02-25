@@ -248,7 +248,7 @@ docker run -v mydbdata:/var/lib/mysql mysql
 
 Explizites Host-Verzeichnis:
 
-```
+```bash
 bashdocker run -v /srv/mysql:/var/lib/mysql mysql
 ```
 
@@ -272,14 +272,17 @@ Default für Container.
 Interne Kommunikation via Container-IP.
 
 Anzeigen:
-
+```bash
 docker network ls  
+```
+```bash
 docker network inspect bridge
+```
 
 IP anzeigen:
-
+```bash
 docker inspect containername
-
+```
 Architektur:
 
 Container ↔ bridge ↔ Host ↔ Internet
@@ -289,13 +292,17 @@ Container ↔ bridge ↔ Host ↔ Internet
 ## 🔴 **Eigene Netzwerkdefinitionen umsetzen**
 
 Eigenes Netzwerk:
-
+```bash
 docker network create mynetwork
+```
 
 Container verbinden:
-
+```bash
 docker run -d --name app --network mynetwork nginx  
+```
+```bash
 docker run -d --name db --network mynetwork mysql
+```
 
 Vorteil:
 
@@ -307,57 +314,77 @@ Vorteil:
     
 
 Netzwerktyp definieren:
-
+```bash
 docker network create --driver bridge mynetwork
-
+```
 ---
 
 ## 🔴 **Docker administrieren (wichtige Befehle)**
 
 ### Überblick
-
-docker ps  
+```bash
+docker ps
+```
+```bash  
 docker ps -a  
+```
+```bash
 docker images  
+```
+```bash
 docker system df  
+```
+```bash
 docker system info
-
+```
 ---
 
 ### Platzbedarf ermitteln
-
+```bash
 docker system df  
+```
+```bash
 docker image ls
-
+```
 ---
 
 ### Container löschen
-
+```bash
 docker rm containername  
+```
+```bash
 docker rm -f containername
-
+```
 ---
 
 ### Images löschen
-
+```bash
 docker rmi imagename
-
+```
 ---
 
 ### Volumes verwalten
-
+```bash
 docker volume ls  
+```
+```bash
 docker volume inspect myvolume  
+```
+```bash
 docker volume rm myvolume
-
+```
 ---
 
 ### Ungenutzten Speicher freigeben
-
+```bash
 docker system prune  
+```
+```bash
 docker system prune -a  
+```
+```bash
 docker volume prune
-
+```
 Achtung:
 
 - `-a` löscht alle ungenutzten Images
