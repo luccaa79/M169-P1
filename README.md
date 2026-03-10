@@ -3,6 +3,7 @@
 https://gbssg.gitlab.io/m169
 
 https://www.datacamp.com/de/tutorial/docker-tutorial
+
 ---
 
 ## 🟢 Container & Docker-Grundbegriffe
@@ -25,7 +26,7 @@ https://www.datacamp.com/de/tutorial/docker-tutorial
 
 ## 🟢 Docker-Container ausführen & interaktiv verwenden
 
-Befehl: 
+**Befehl:** 
 ```bash
 docker run -it <image-name>
 ```
@@ -46,31 +47,36 @@ docker run -p 8080:80 nginx
 
 **Umgang:** Volumes dienen der Datenpersistenz. Da Daten in Containern beim Löschen verloren gehen, speichert man sie in Volumes auf dem Host.
 
-**Benennung & Pfad:**
-Named Volume:
+### Benennung & Pfad:
+**Named Volume:**
 ```bash
 docker run -v mein_specher:/pfad/im/container ...
 ```
 (Docker verwaltet den Speicherort).
 ```bash
-Bind Mount: docker run -v /mein/lokaler/pfad:/pfad/im/container ... (Du definierst den genauen Ordner auf deinem Rechner).
+Bind Mount: docker run -v /mein/lokaler/pfad:/pfad/im/container ...
 ```
+(Du definierst den genauen Ordner auf deinem Rechner).
     
 ## 🔴 Netzwerke mit Docker
 
-**Standardaufbau:** Docker erstellt automatisch ein bridge-Netzwerk. Container darin können über IP-Adressen kommunizieren, aber nicht standardmäßig über Namen (außer im benutzerdefinierten Netzwerk).
+**Standardaufbau:** Docker erstellt automatisch ein bridge-Netzwerk. Container darin können über IP-Adressen kommunizieren, aber nicht standardmässig über Namen (ausser im benutzerdefinierten Netzwerk).
 
-**Eigene Definition:** Mit
+**Eigene Definition:** Mit...
 ```bash
 docker network create mein-netz
 ```
-erstellst du ein isoliertes Netzwerk. Container im selben Netzwerk können sich gegenseitig über ihren Containernamen erreichen (integriertes DNS).
+...erstellst du ein isoliertes Netzwerk. Container im selben Netzwerk können sich gegenseitig über ihren Containernamen erreichen (integriertes DNS).
 
-## 🟠 Docker Administration & Befehle
+## 🟠 Docker Befehle
 
-Platzbedarf ermitteln: docker system df
+**Platzbedarf ermitteln:**
+```bash
+docker system df
+```
 
-**Löschen:**
+### Löschen:
+
 **Container:**
 ```bash
 docker rm <ID>
