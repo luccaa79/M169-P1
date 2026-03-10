@@ -53,8 +53,9 @@ docker run -p 8080:80 nginx
 docker run -v mein_specher:/pfad/im/container ...
 ```
 (Docker verwaltet den Speicherort).
+**Bind Mount: **
 ```bash
-Bind Mount: docker run -v /mein/lokaler/pfad:/pfad/im/container ...
+docker run -v /mein/lokaler/pfad:/pfad/im/container ...
 ```
 (Du definierst den genauen Ordner auf deinem Rechner).
     
