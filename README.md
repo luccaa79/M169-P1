@@ -5,7 +5,7 @@ https://gbssg.gitlab.io/m169
 https://www.datacamp.com/de/tutorial/docker-tutorial
 ---
 
-##🟢 Container & Docker-Grundbegriffe##
+## 🟢 Container & Docker-Grundbegriffe**
 
 Container: Eine isolierte Umgebung, die eine Anwendung und alle ihre Abhängigkeiten (Bibliotheken, Konfigurationsdateien) verpackt, damit sie überall gleich läuft.
 Docker Image: Eine schreibgeschützte Vorlage (wie ein Bauplan), die Anweisungen zum Erstellen eines Containers enthält.
