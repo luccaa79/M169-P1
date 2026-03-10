@@ -41,7 +41,7 @@ docker run -it <image-name>
 ```bash
 docker run -p 8080:80 nginx
 ```
-(Leitet Host-Port 8080 auf Container-Port 80 weiter).
+(Leitet Host-Port 80 auf Container-Port 8080 weiter).
 
 ## 🟠 Docker Volumes verstehen & benennen
 
