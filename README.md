@@ -47,32 +47,63 @@ docker run -p 8080:80 nginx
 **Umgang:** Volumes dienen der Datenpersistenz. Da Daten in Containern beim Löschen verloren gehen, speichert man sie in Volumes auf dem Host.
 
 **Benennung & Pfad:**
-    Named Volume:
-    ```bash
-    docker run -v mein_specher:/pfad/im/container ...
-    ```
-    (Docker verwaltet den Speicherort).
-    ```bash
-    Bind Mount: docker run -v /mein/lokaler/pfad:/pfad/im/container ... (Du definierst den genauen Ordner auf deinem Rechner).
-    ```
+Named Volume:
+```bash
+docker run -v mein_specher:/pfad/im/container ...
+```
+(Docker verwaltet den Speicherort).
+```bash
+Bind Mount: docker run -v /mein/lokaler/pfad:/pfad/im/container ... (Du definierst den genauen Ordner auf deinem Rechner).
+```
     
 ## 🔴 Netzwerke mit Docker
 
 **Standardaufbau:** Docker erstellt automatisch ein bridge-Netzwerk. Container darin können über IP-Adressen kommunizieren, aber nicht standardmäßig über Namen (außer im benutzerdefinierten Netzwerk).
 
-**Eigene Definition:** Mit ```bash docker network create mein-netz ``` erstellst du ein isoliertes Netzwerk. Container im selben Netzwerk können sich gegenseitig über ihren Containernamen erreichen (integriertes DNS).
+**Eigene Definition:** Mit
+```bash
+docker network create mein-netz
+```
+erstellst du ein isoliertes Netzwerk. Container im selben Netzwerk können sich gegenseitig über ihren Containernamen erreichen (integriertes DNS).
 
 ## 🟠 Docker Administration & Befehle
 
 Platzbedarf ermitteln: docker system df
 
 **Löschen:**
-    Container: docker rm <ID> (muss gestoppt sein)
+**Container:**
+```bash
+docker rm <ID>
+```
+(muss gestoppt sein)
     
-    Images: ```bash docker rmi <ID>```
+**Images:**
+```bash
+docker rmi <ID>
+```
     
-    Volumes verwalten: docker volume ls (anzeigen), docker volume rm <name> (löschen).
+**Volumes verwalten:**
+```bash
+docker volume ls
+```
+(anzeigen)
+```bash
+docker volume rm <name>
+```
+(löschen).
+
+**Gesamtüberblick:**
+```bash
+docker ps -a
+```
+(alle Container)
+```bash
+docker images
+```
+(alle Images).
     
-    Gesamtüberblick: docker ps -a (alle Container), docker images (alle Images).
-    
-    Speicher freigeben: docker system prune (entfernt alle ungenutzten Daten wie gestoppte Container und ungenutzte Netzwerke).
+**Speicher freigeben:** 
+```bash
+docker system prune
+```
+(entfernt alle ungenutzten Daten wie gestoppte Container und ungenutzte Netzwerke).
