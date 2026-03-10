@@ -8,9 +8,13 @@ https://www.datacamp.com/de/tutorial/docker-tutorial
 ## 🟢 Container & Docker-Grundbegriffe
 
 **Container:** Eine isolierte Umgebung, die eine Anwendung und alle ihre Abhängigkeiten (Bibliotheken, Konfigurationsdateien) verpackt, damit sie überall gleich läuft.
+
 **Docker Image:** Eine schreibgeschützte Vorlage (wie ein Bauplan), die Anweisungen zum Erstellen eines Containers enthält.
+
 **Dockerfile:** Eine Textdatei mit Befehlen, die Docker nacheinander ausführt, um automatisch ein Image zu erstellen.
+
 **Docker-Container:** Eine laufende Instanz eines Images. Er ist das "lebende" Objekt.
+
 **Docker-Registry:** Ein Lagerort (wie Docker Hub), auf dem Images gespeichert und geteilt werden können.
 
 ## 🟢 Virtualisierung vs. Cloud
